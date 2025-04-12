@@ -20,10 +20,10 @@
   - [X] Configurar .gitignore
   - [X] Configurar GitHub Actions CI/CD
 
-- [ ] **ENV002 - Configurar Ambiente de Desenvolvimento**
-  - [ ] Configurar Docker e Docker Compose
-  - [ ] Criar Dockerfile para desenvolvimento
-  - [ ] Configurar volumes e networks
+- [X] **ENV002 - Configurar Ambiente de Desenvolvimento**
+  - [X] Configurar Docker e Docker Compose
+  - [X] Criar Dockerfile para desenvolvimento
+  - [X] Configurar volumes e networks
 
 - [ ] **ENV003 - Configurar Estrutura do Projeto NestJS**
   - [ ] Inicializar projeto NestJS
