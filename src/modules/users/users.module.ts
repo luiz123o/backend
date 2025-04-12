@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { User } from './entities/user.entity';
+import { UserRepository } from './repositories/user.repository';
 
 @Module({
   imports: [
@@ -8,7 +9,7 @@ import { User } from './entities/user.entity';
     TypeOrmModule.forFeature([User]),
   ],
   controllers: [],
-  providers: [],
-  exports: [TypeOrmModule],
+  providers: [UserRepository],
+  exports: [TypeOrmModule, UserRepository],
 })
 export class UsersModule {} 

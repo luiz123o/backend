@@ -51,10 +51,10 @@
   - [X] Configurar mapeamento ORM
   - [X] Adicionar validações e regras de negócio
 
-- [ ] **USR002 - Implementar Repositório de Usuários**
-  - [ ] Criar repository base
-  - [ ] Implementar métodos personalizados
-  - [ ] Adicionar testes unitários
+- [X] **USR002 - Implementar Repositório de Usuários**
+  - [X] Criar repository base
+  - [X] Implementar métodos personalizados
+  - [X] Adicionar testes unitários
 
 ### 2.2 Serviços de Usuário
 
@@ -63,11 +63,13 @@
   - [ ] Implementar geração de JWT
   - [ ] Implementar refresh token
   - [ ] Implementar OAuth2 (Google/Apple)
+  - [ ] Implementar documentação
 
 - [ ] **USR004 - Implementar Serviço de Usuários**
   - [ ] Criar, atualizar e recuperar usuários
   - [ ] Gerenciar perfil
   - [ ] Implementar exclusão de conta (LGPD)
+  - [ ] Implementar documentação
 
 ### 2.3 Controllers e APIs
 
@@ -75,11 +77,13 @@
   - [ ] Endpoints de login/logout
   - [ ] Endpoint de refresh token
   - [ ] Autenticação social
+  - [ ] Implementar documentação
 
 - [ ] **USR006 - Implementar Controllers de Usuários**
   - [ ] CRUD de usuários
   - [ ] Endpoints de perfil
   - [ ] Gerenciamento de assinatura Premium
+  - [ ] Implementar documentação
 
 ### 2.4 Testes
 
@@ -87,10 +91,12 @@
   - [ ] Testes de serviços
   - [ ] Testes de repositories
   - [ ] Testes de entidades
+  - [ ] Implementar documentação
 
 - [ ] **USR008 - Testes E2E**
   - [ ] Testes de API de autenticação
   - [ ] Testes de API de usuários
+  - [ ] Implementar documentação
 
 ## 3. Implementação do Módulo de Categorias
 
@@ -100,11 +106,13 @@
   - [ ] Implementar entidade Category
   - [ ] Configurar mapeamento ORM
   - [ ] Implementar seed de categorias padrão
+  - [ ] Implementar documentação
 
 - [ ] **CAT002 - Implementar Repositório de Categorias**
   - [ ] Criar repository base
   - [ ] Implementar métodos personalizados
   - [ ] Adicionar testes unitários
+  - [ ] Implementar documentação
 
 ### 3.2 Serviços de Categoria
 
@@ -112,6 +120,7 @@
   - [ ] CRUD de categorias
   - [ ] Lógica para categorias default/personalizadas
   - [ ] Regras de negócio
+  - [ ] Implementar documentação
 
 ### 3.3 Controllers e APIs
 
@@ -119,15 +128,18 @@
   - [ ] Endpoint de listagem
   - [ ] Endpoints CRUD
   - [ ] Validações
+  - [ ] Implementar documentação
 
 ### 3.4 Testes
 
 - [ ] **CAT005 - Testes Unitários**
   - [ ] Testes de serviços
   - [ ] Testes de repositories
+  - [ ] Implementar documentação
 
 - [ ] **CAT006 - Testes E2E**
   - [ ] Testes de API de categorias
+  - [ ] Implementar documentação
 
 ## 4. Implementação do Módulo de Assinaturas
 
@@ -137,11 +149,13 @@
   - [ ] Implementar entidade Subscription
   - [ ] Configurar mapeamento ORM
   - [ ] Adicionar validações
+  - [ ] Implementar documentação
 
 - [ ] **SUB002 - Implementar Repositório de Assinaturas**
   - [ ] Criar repository base
   - [ ] Implementar métodos de busca específicos
   - [ ] Adicionar testes unitários
+  - [ ] Implementar documentação
 
 ### 4.2 Serviços de Assinatura
 
@@ -149,11 +163,13 @@
   - [ ] CRUD de assinaturas
   - [ ] Lógica para próximas datas de cobrança
   - [ ] Filtros e ordenação
+  - [ ] Implementar documentação
 
 - [ ] **SUB004 - Implementar Serviço de Insights**
   - [ ] Detecção de duplicidades
   - [ ] Recomendações de economia
   - [ ] Análise de gastos
+  - [ ] Implementar documentação
 
 ### 4.3 Controllers e APIs
 
@@ -161,10 +177,12 @@
   - [ ] Endpoints CRUD
   - [ ] Endpoints de busca avançada
   - [ ] Endpoints para dashboard
+  - [ ] Implementar documentação
 
 - [ ] **SUB006 - Implementar Controllers de Insights**
   - [ ] Endpoints para recomendações
   - [ ] Endpoints para análises
+  - [ ] Implementar documentação
 
 ### 4.4 Testes
 
@@ -172,10 +190,12 @@
   - [ ] Testes de serviços
   - [ ] Testes de repositories
   - [ ] Testes de lógica de negócios
+  - [ ] Implementar documentação
 
 - [ ] **SUB008 - Testes E2E**
   - [ ] Testes de API de assinaturas
   - [ ] Testes de API de insights
+  - [ ] Implementar documentação
 
 ## 5. Implementação do Módulo de Transações
 
@@ -185,6 +205,7 @@
   - [ ] Implementar entidade Transaction
   - [ ] Configurar mapeamento ORM
   - [ ] Configurar particionamento
+  - [ ] Implementar documentação
 
 - [ ] **TRX002 - Implementar Repositório de Transações**
   - [ ] Criar repository base
