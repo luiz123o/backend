@@ -64,19 +64,19 @@
   - [X] Implementar refresh token
   - [X] Implementar OAuth2 (Google/Apple)
 
-- [ ] **USR004 - Implementar Serviço de Usuários**
-  - [ ] Criar, atualizar e recuperar usuários
-  - [ ] Gerenciar perfil
-  - [ ] Implementar exclusão de conta (LGPD)
-  - [ ] Implementar documentação
+- [X] **USR004 - Implementar Serviço de Usuários**
+  - [X] Criar, atualizar e recuperar usuários
+  - [X] Gerenciar perfil
+  - [X] Implementar exclusão de conta (LGPD)
+  - [X] Implementar documentação
 
 ### 2.3 Controllers e APIs
 
-- [ ] **USR005 - Implementar Controllers de Autenticação**
-  - [ ] Endpoints de login/logout
-  - [ ] Endpoint de refresh token
-  - [ ] Autenticação social
-  - [ ] Implementar documentação
+- [X] **USR005 - Implementar Controllers de Autenticação**
+  - [X] Endpoints de login/logout
+  - [X] Endpoint de refresh token
+  - [X] Autenticação social
+  - [X] Implementar documentação
 
 - [ ] **USR006 - Implementar Controllers de Usuários**
   - [ ] CRUD de usuários
