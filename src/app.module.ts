@@ -2,11 +2,13 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { APP_GUARD } from '@nestjs/core';
 import { ThrottlerGuard, ThrottlerModule } from '@nestjs/throttler';
+import { TypeOrmModule } from '@nestjs/typeorm';
 
 import appConfig from './config/app.config';
 import databaseConfig from './config/database.config';
 import jwtConfig from './config/jwt.config';
 import throttleConfig from './config/throttle.config';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
   imports: [
@@ -27,17 +29,17 @@ import throttleConfig from './config/throttle.config';
       }),
     }),
 
-    // Conexão com o banco de dados (será configurada no ENV005)
-    // TypeOrmModule.forRootAsync({
-    //   imports: [ConfigModule],
-    //   inject: [ConfigService],
-    //   useFactory: (config: ConfigService) => ({
-    //     ...config.get('database'),
-    //   }),
-    // }),
+    // Conexão com o banco de dados
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => ({
+        ...config.get('database'),
+      }),
+    }),
 
     // Módulos da aplicação
-    // Serão importados à medida que forem implementados
+    UsersModule,
   ],
   controllers: [],
   providers: [

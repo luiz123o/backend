@@ -50,9 +50,24 @@ npm run test:e2e
 npm run test:cov
 ```
 
-## Estrutura do Projeto
+## Migrations e Banco de Dados
 
+O projeto utiliza TypeORM para ORM e sistema de migrations.
+
+```bash
+# Criar uma nova migration
+npm run migration:create -- src/database/migrations/NomeDaMigration
+
+# Gerar migration a partir das alterações nas entidades
+npm run migration:generate -- src/database/migrations/NomeDaMigration
+
+# Executar migrations pendentes
+npm run migration:run
+
+# Reverter última migration
+npm run migration:revert
 ```
+
 .
 ├── src/
 │   ├── main.ts                     # Ponto de entrada

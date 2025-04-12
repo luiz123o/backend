@@ -37,19 +37,19 @@
   - [X] Configurar extensões necessárias
   - [X] Configurar backups automáticos
 
-- [ ] **ENV005 - Configurar TypeORM**
-  - [ ] Integrar TypeORM ao NestJS
-  - [ ] Configurar conexão com banco de dados
-  - [ ] Configurar sistema de migrations
+- [X] **ENV005 - Configurar TypeORM**
+  - [X] Integrar TypeORM ao NestJS
+  - [X] Configurar conexão com banco de dados
+  - [X] Configurar sistema de migrations
 
 ## 2. Implementação do Módulo de Usuários
 
 ### 2.1 Entidades e Repositórios
 
-- [ ] **USR001 - Criar Entidade de Usuário**
-  - [ ] Implementar entidade User
-  - [ ] Configurar mapeamento ORM
-  - [ ] Adicionar validações e regras de negócio
+- [X] **USR001 - Criar Entidade de Usuário**
+  - [X] Implementar entidade User
+  - [X] Configurar mapeamento ORM
+  - [X] Adicionar validações e regras de negócio
 
 - [ ] **USR002 - Implementar Repositório de Usuários**
   - [ ] Criar repository base
