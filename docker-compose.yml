@@ -1,0 +1,78 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: subscription-manager-api
+    volumes:
+      - .:/usr/src/app
+      - /usr/src/app/node_modules
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+      - redis
+    env_file:
+      - .env
+    networks:
+      - subscription-network
+    # Habilitar para depuração
+    # command: npm run start:debug
+    # expose:
+    #   - 9229
+
+  postgres:
+    image: postgres:15
+    container_name: subscription-manager-postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: ${DB_USERNAME:-postgres}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
+      POSTGRES_DB: ${DB_DATABASE:-subscription_manager}
+    volumes:
+      - ./docker/volumes/postgres:/var/lib/postgresql/data
+      - ./docker/init-scripts:/docker-entrypoint-initdb.d
+    networks:
+      - subscription-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: subscription-manager-redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./docker/volumes/redis:/data
+    networks:
+      - subscription-network
+    command: redis-server --appendonly yes
+
+  # Serviço opcional para administração do PostgreSQL
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: subscription-manager-pgadmin
+    restart: always
+    ports:
+      - "5050:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    volumes:
+      - ./docker/volumes/pgadmin:/var/lib/pgadmin
+    depends_on:
+      - postgres
+    networks:
+      - subscription-network
+
+networks:
+  subscription-network:
+    driver: bridge
+
+volumes:
+  postgres-data:
+  redis-data:
+  pgadmin-data:

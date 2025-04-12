@@ -1,0 +1,47 @@
+FROM node:18-alpine AS builder
+
+# Criar diretório da aplicação
+WORKDIR /usr/src/app
+
+# Copiar package.json e package-lock.json
+COPY package*.json ./
+
+# Instalar dependências
+RUN npm ci
+
+# Copiar código fonte
+COPY . .
+
+# Compilar o projeto
+RUN npm run build
+
+# Remover devDependencies
+RUN npm ci --only=production
+
+# Segunda etapa, apenas com arquivos necessários
+FROM node:18-alpine AS production
+
+# Definir variáveis de ambiente
+ARG NODE_ENV=production
+ENV NODE_ENV=${NODE_ENV}
+
+# Criar usuário não-root
+RUN addgroup -g 1001 nestjs && \
+  adduser -S -u 1001 -G nestjs nestjs
+
+# Criar diretório da aplicação
+WORKDIR /usr/src/app
+
+# Copiar arquivos compilados e dependências
+COPY --from=builder --chown=nestjs:nestjs /usr/src/app/dist ./dist
+COPY --from=builder --chown=nestjs:nestjs /usr/src/app/node_modules ./node_modules
+COPY --from=builder --chown=nestjs:nestjs /usr/src/app/package*.json ./
+
+# Trocar para usuário não-root
+USER nestjs
+
+# Expor porta
+EXPOSE 3000
+
+# Comando para iniciar em modo de produção
+CMD ["node", "dist/main"] 
