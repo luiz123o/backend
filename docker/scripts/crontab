@@ -1,0 +1,5 @@
+# Executar backup diário às 02:00
+0 2 * * * /scripts/backup-postgres.sh >> /var/log/cron.log 2>&1
+
+# Manter o arquivo de log limpo
+0 0 * * 0 echo "" > /var/log/cron.log 

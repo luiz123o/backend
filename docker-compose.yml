@@ -33,11 +33,59 @@ services:
       POSTGRES_USER: ${DB_USERNAME:-postgres}
       POSTGRES_PASSWORD: ${DB_PASSWORD:-postgres}
       POSTGRES_DB: ${DB_DATABASE:-subscription_manager}
+      TZ: "America/Sao_Paulo"
+      PGTZ: "America/Sao_Paulo"
     volumes:
       - ./docker/volumes/postgres:/var/lib/postgresql/data
       - ./docker/init-scripts:/docker-entrypoint-initdb.d
+      - ./docker/scripts:/scripts
+      - ./docker/volumes/backups:/backup
     networks:
       - subscription-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Serviço de backup do PostgreSQL (execução única)
+  postgres-backup:
+    image: postgres:15
+    container_name: subscription-manager-postgres-backup
+    depends_on:
+      - postgres
+    volumes:
+      - ./docker/scripts:/scripts
+      - ./docker/volumes/backups:/backup
+    networks:
+      - subscription-network
+    command: /bin/bash -c "sleep 30 && /scripts/backup-postgres.sh"
+    deploy:
+      restart_policy:
+        condition: none
+
+  # Serviço de backup automático (agendado)
+  postgres-backup-cron:
+    image: postgres:15
+    container_name: subscription-manager-postgres-backup-cron
+    depends_on:
+      - postgres
+    volumes:
+      - ./docker/scripts:/scripts
+      - ./docker/volumes/backups:/backup
+    networks:
+      - subscription-network
+    environment:
+      TZ: "America/Sao_Paulo"
+    command: >
+      bash -c "
+        apt-get update && apt-get -y install cron
+        crontab /scripts/crontab
+        mkdir -p /var/log
+        touch /var/log/cron.log
+        cron && tail -f /var/log/cron.log
+      "
+    restart: always
 
   redis:
     image: redis:7-alpine
@@ -76,3 +124,4 @@ volumes:
   postgres-data:
   redis-data:
   pgadmin-data:
+  postgres-backups:

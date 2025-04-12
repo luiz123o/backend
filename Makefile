@@ -5,6 +5,9 @@ DOCKER_COMPOSE = docker-compose
 DOCKER_EXEC = docker exec -it subscription-manager-api
 NPM = npm
 
+# Inclui comandos específicos do PostgreSQL
+include docker/scripts/postgres-commands.mk
+
 # Comandos Docker
 up:
 	$(DOCKER_COMPOSE) up -d
@@ -75,6 +78,12 @@ help:
 	@echo "  exec-test        - Executa testes no container"
 	@echo "  exec-test-e2e    - Executa testes e2e no container"
 	@echo "  exec-test-coverage - Executa testes com cobertura no container"
+	@echo ""
+	@echo "Comandos PostgreSQL:"
+	@echo "  pg-backup        - Executa backup manual do PostgreSQL"
+	@echo "  pg-restore       - Restaura backup do PostgreSQL"
+	@echo "  pg-list-backups  - Lista backups disponíveis"
+	@echo "  pg-info          - Exibe informações sobre o PostgreSQL"
 
 # Valor padrão
 .DEFAULT_GOAL := help 
