@@ -33,9 +33,9 @@ describe('User Entity', () => {
       hashSpy.mockRestore();
     });
 
-    it('should not hash the password if it is not modified', async () => {
+    it('should not hash the password if it is empty', async () => {
       // Setup
-      user.password = undefined;
+      user.password = '';
       const hashSpy = jest.spyOn(bcrypt, 'hash');
 
       // Execute

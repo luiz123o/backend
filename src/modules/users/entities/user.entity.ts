@@ -145,8 +145,8 @@ export class User {
   @BeforeInsert()
   @BeforeUpdate()
   async hashPassword() {
-    // Só faz hash da senha se ela foi modificada
-    if (this.password) {
+    // Só faz hash da senha se ela foi modificada e não está vazia
+    if (this.password && this.password.trim() !== '') {
       const salt = await bcrypt.genSalt(10);
       this.password = await bcrypt.hash(this.password, salt);
       
