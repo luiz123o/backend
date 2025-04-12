@@ -25,10 +25,10 @@
   - [X] Criar Dockerfile para desenvolvimento
   - [X] Configurar volumes e networks
 
-- [ ] **ENV003 - Configurar Estrutura do Projeto NestJS**
-  - [ ] Inicializar projeto NestJS
-  - [ ] Organizar estrutura de pastas conforme arquitetura
-  - [ ] Configurar ESLint e Prettier
+- [X] **ENV003 - Configurar Estrutura do Projeto NestJS**
+  - [X] Inicializar projeto NestJS
+  - [X] Organizar estrutura de pastas conforme arquitetura
+  - [X] Configurar ESLint e Prettier
 
 ### 1.2 Configuração de Banco de Dados
 
