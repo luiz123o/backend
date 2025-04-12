@@ -8,6 +8,7 @@ import appConfig from './config/app.config';
 import databaseConfig from './config/database.config';
 import jwtConfig from './config/jwt.config';
 import throttleConfig from './config/throttle.config';
+import { AuthModule } from './modules/users/auth.module';
 import { UsersModule } from './modules/users/users.module';
 
 @Module({
@@ -40,6 +41,7 @@ import { UsersModule } from './modules/users/users.module';
 
     // Módulos da aplicação
     UsersModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [

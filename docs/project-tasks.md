@@ -58,12 +58,11 @@
 
 ### 2.2 Serviços de Usuário
 
-- [ ] **USR003 - Implementar Serviço de Autenticação**
-  - [ ] Desenvolver lógica de login
-  - [ ] Implementar geração de JWT
-  - [ ] Implementar refresh token
+- [X] **USR003 - Implementar Serviço de Autenticação**
+  - [X] Desenvolver lógica de login
+  - [X] Implementar geração de JWT
+  - [X] Implementar refresh token
   - [ ] Implementar OAuth2 (Google/Apple)
-  - [ ] Implementar documentação
 
 - [ ] **USR004 - Implementar Serviço de Usuários**
   - [ ] Criar, atualizar e recuperar usuários
