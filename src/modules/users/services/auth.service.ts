@@ -283,4 +283,54 @@ export class AuthService {
       default: return 3600;
     }
   }
+
+  /**
+   * Realiza o login com OAuth2 do Google
+   * 
+   * @param user Usuário autenticado pelo Google
+   * @returns Promise<LoginResponseDto> Dados do usuário e tokens
+   */
+  async googleLogin(user: User): Promise<LoginResponseDto> {
+    if (!user) {
+      throw new UnauthorizedException('Não foi possível autenticar com o Google');
+    }
+
+    // Atualiza a data do último login
+    user.lastLoginAt = new Date();
+    await this.userRepository.save(user);
+
+    // Gera os tokens
+    const tokens = await this.generateTokens(user);
+    
+    // Prepara a resposta
+    return {
+      user: this.buildUserResponse(user),
+      tokens,
+    };
+  }
+
+  /**
+   * Realiza o login com OAuth2 da Apple
+   * 
+   * @param user Usuário autenticado pela Apple
+   * @returns Promise<LoginResponseDto> Dados do usuário e tokens
+   */
+  async appleLogin(user: User): Promise<LoginResponseDto> {
+    if (!user) {
+      throw new UnauthorizedException('Não foi possível autenticar com a Apple');
+    }
+
+    // Atualiza a data do último login
+    user.lastLoginAt = new Date();
+    await this.userRepository.save(user);
+
+    // Gera os tokens
+    const tokens = await this.generateTokens(user);
+    
+    // Prepara a resposta
+    return {
+      user: this.buildUserResponse(user),
+      tokens,
+    };
+  }
 } 

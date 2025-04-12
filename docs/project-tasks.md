@@ -62,7 +62,7 @@
   - [X] Desenvolver lógica de login
   - [X] Implementar geração de JWT
   - [X] Implementar refresh token
-  - [ ] Implementar OAuth2 (Google/Apple)
+  - [X] Implementar OAuth2 (Google/Apple)
 
 - [ ] **USR004 - Implementar Serviço de Usuários**
   - [ ] Criar, atualizar e recuperar usuários

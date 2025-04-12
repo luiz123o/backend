@@ -380,4 +380,94 @@ describe('AuthService', () => {
       });
     });
   });
+
+  describe('googleLogin', () => {
+    it('should update lastLoginAt and return user data with tokens', async () => {
+      // Mock do usuário do Google
+      const googleUser = {
+        ...mockUser,
+        googleId: 'google-id-123',
+        lastLoginAt: null,
+        validatePassword: jest.fn(),
+        isPasswordResetTokenExpired: jest.fn(),
+        hashPassword: jest.fn(),
+      } as User;
+      
+      // Mock generateTokens
+      const tokens = {
+        accessToken: 'google-access-token',
+        refreshToken: 'google-refresh-token',
+        expiresIn: 3600,
+      };
+      (service as any).generateTokens = jest.fn().mockResolvedValue(tokens);
+      
+      const result = await service.googleLogin(googleUser);
+      
+      // Verifica se lastLoginAt foi atualizado
+      expect(googleUser.lastLoginAt).toBeInstanceOf(Date);
+      expect(userRepository.save).toHaveBeenCalledWith(googleUser);
+      
+      // Verifica o resultado
+      expect(result).toEqual({
+        user: {
+          id: googleUser.id,
+          name: googleUser.name,
+          email: googleUser.email,
+          role: googleUser.role,
+          status: googleUser.status,
+          emailVerified: googleUser.emailVerified,
+        },
+        tokens,
+      });
+    });
+    
+    it('should throw UnauthorizedException if user is not provided', async () => {
+      await expect(service.googleLogin(null as any)).rejects.toThrow(UnauthorizedException);
+    });
+  });
+  
+  describe('appleLogin', () => {
+    it('should update lastLoginAt and return user data with tokens', async () => {
+      // Mock do usuário da Apple
+      const appleUser = {
+        ...mockUser,
+        appleId: 'apple-id-123',
+        lastLoginAt: null,
+        validatePassword: jest.fn(),
+        isPasswordResetTokenExpired: jest.fn(),
+        hashPassword: jest.fn(),
+      } as User;
+      
+      // Mock generateTokens
+      const tokens = {
+        accessToken: 'apple-access-token',
+        refreshToken: 'apple-refresh-token',
+        expiresIn: 3600,
+      };
+      (service as any).generateTokens = jest.fn().mockResolvedValue(tokens);
+      
+      const result = await service.appleLogin(appleUser);
+      
+      // Verifica se lastLoginAt foi atualizado
+      expect(appleUser.lastLoginAt).toBeInstanceOf(Date);
+      expect(userRepository.save).toHaveBeenCalledWith(appleUser);
+      
+      // Verifica o resultado
+      expect(result).toEqual({
+        user: {
+          id: appleUser.id,
+          name: appleUser.name,
+          email: appleUser.email,
+          role: appleUser.role,
+          status: appleUser.status,
+          emailVerified: appleUser.emailVerified,
+        },
+        tokens,
+      });
+    });
+    
+    it('should throw UnauthorizedException if user is not provided', async () => {
+      await expect(service.appleLogin(null as any)).rejects.toThrow(UnauthorizedException);
+    });
+  });
 }); 
