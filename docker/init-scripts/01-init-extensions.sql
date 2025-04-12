@@ -17,6 +17,7 @@ ALTER SYSTEM SET default_statistics_target = 100;
 -- Configurações de locale e timezone
 ALTER SYSTEM SET timezone = 'America/Sao_Paulo';
 ALTER SYSTEM SET lc_messages = 'en_US.UTF-8';
-ALTER SYSTEM SET lc_monetary = 'pt_BR.UTF-8';
-ALTER SYSTEM SET lc_numeric = 'pt_BR.UTF-8';
-ALTER SYSTEM SET lc_time = 'pt_BR.UTF-8'; 
+-- Usar locale que temos certeza que existe na imagem
+ALTER SYSTEM SET lc_monetary = 'en_US.UTF-8';
+ALTER SYSTEM SET lc_numeric = 'en_US.UTF-8';
+ALTER SYSTEM SET lc_time = 'en_US.UTF-8'; 

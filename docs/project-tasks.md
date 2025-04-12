@@ -32,10 +32,10 @@
 
 ### 1.2 Configuração de Banco de Dados
 
-- [ ] **ENV004 - Configurar PostgreSQL**
-  - [ ] Criar container Docker
-  - [ ] Configurar extensões necessárias
-  - [ ] Configurar backups automáticos
+- [X] **ENV004 - Configurar PostgreSQL**
+  - [X] Criar container Docker
+  - [X] Configurar extensões necessárias
+  - [X] Configurar backups automáticos
 
 - [ ] **ENV005 - Configurar TypeORM**
   - [ ] Integrar TypeORM ao NestJS
