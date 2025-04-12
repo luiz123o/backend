@@ -78,11 +78,11 @@
   - [X] Autenticação social
   - [X] Implementar documentação
 
-- [ ] **USR006 - Implementar Controllers de Usuários**
-  - [ ] CRUD de usuários
-  - [ ] Endpoints de perfil
-  - [ ] Gerenciamento de assinatura Premium
-  - [ ] Implementar documentação
+- [X] **USR006 - Implementar Controllers de Usuários**
+  - [X] CRUD de usuários
+  - [X] Endpoints de perfil
+  - [X] Gerenciamento de assinatura Premium
+  - [X] Implementar documentação
 
 ### 2.4 Testes
 
