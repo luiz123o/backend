@@ -15,10 +15,10 @@
 
 ### 1.1 Setup Inicial
 
-- [ ] **ENV001 - Configurar Repositório Git**
-  - [ ] Inicializar repositório
-  - [ ] Configurar .gitignore
-  - [ ] Configurar GitHub Actions CI/CD
+- [X] **ENV001 - Configurar Repositório Git**
+  - [X] Inicializar repositório
+  - [X] Configurar .gitignore
+  - [X] Configurar GitHub Actions CI/CD
 
 - [ ] **ENV002 - Configurar Ambiente de Desenvolvimento**
   - [ ] Configurar Docker e Docker Compose
