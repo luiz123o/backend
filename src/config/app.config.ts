@@ -1,7 +1,7 @@
 export default () => ({
   app: {
     nodeEnv: process.env.NODE_ENV || 'development',
-    port: parseInt(process.env.PORT, 10) || 3000,
+    port: process.env.PORT ? parseInt(process.env.PORT, 10) : 3000,
     apiPrefix: process.env.API_PREFIX || 'api',
     apiVersion: process.env.API_VERSION || 'v1',
   },

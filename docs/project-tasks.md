@@ -92,20 +92,20 @@
   - [X] Testes de entidades
   - [X] Implementar documentação
 
-- [ ] **USR008 - Testes E2E**
-  - [ ] Testes de API de autenticação
-  - [ ] Testes de API de usuários
-  - [ ] Implementar documentação
+- [X] **USR008 - Testes E2E**
+  - [X] Testes de API de autenticação
+  - [X] Testes de API de usuários
+  - [X] Implementar documentação
 
 ## 3. Implementação do Módulo de Categorias
 
 ### 3.1 Entidades e Repositórios
 
-- [ ] **CAT001 - Criar Entidade de Categoria**
-  - [ ] Implementar entidade Category
-  - [ ] Configurar mapeamento ORM
-  - [ ] Implementar seed de categorias padrão
-  - [ ] Implementar documentação
+- [X] **CAT001 - Criar Entidade de Categoria**
+  - [X] Implementar entidade Category
+  - [X] Configurar mapeamento ORM
+  - [X] Implementar seed de categorias padrão
+  - [X] Implementar documentação
 
 - [ ] **CAT002 - Implementar Repositório de Categorias**
   - [ ] Criar repository base
@@ -465,6 +465,6 @@
 
 ---
 
-**Progresso Total:** 0/88 tarefas concluídas (0%)
+**Progresso Total:** 16/88 tarefas concluídas (18,2%)
 
 **Nota:** Esta lista de tarefas deve ser atualizada regularmente conforme o progresso do projeto. Cada tarefa deve ter seus testes unitários e de integração correspondentes, garantindo 100% de cobertura. 
