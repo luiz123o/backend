@@ -86,11 +86,11 @@
 
 ### 2.4 Testes
 
-- [ ] **USR007 - Testes Unitários**
-  - [ ] Testes de serviços
-  - [ ] Testes de repositories
-  - [ ] Testes de entidades
-  - [ ] Implementar documentação
+- [X] **USR007 - Testes Unitários**
+  - [X] Testes de serviços
+  - [X] Testes de repositories
+  - [X] Testes de entidades
+  - [X] Implementar documentação
 
 - [ ] **USR008 - Testes E2E**
   - [ ] Testes de API de autenticação
