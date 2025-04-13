@@ -34,6 +34,16 @@
   - Implementada estrutura resiliente a falhas de conexão com banco de dados
   - Adicionada documentação detalhada no diretório `test/users`
 
+### Módulo de Categorias
+
+#### Entidades e Repositórios
+- ✅ **CAT001**: Implementada entidade Category com seed de categorias padrão
+  - Criada entidade com mapeamento ORM completo
+  - Implementado enum CategoryType para diferenciação entre categorias padrão e personalizadas
+  - Criado serviço de seed para população automática de categorias padrão
+  - Adicionada migration para criação da tabela no banco de dados
+  - Implementados testes unitários para entidade e serviço de seed
+
 ### Melhorias Técnicas
 - Ajustado ThrottlerModule para proteção contra ataques de força bruta
 - Configurado tratamento adequado de variáveis de ambiente
@@ -49,5 +59,5 @@
 - Corrigidos erros de TypeScript relacionados a tipos nulos em operações de banco de dados
 
 ## Próximos Passos
-- **CAT001-CAT006**: Implementação do módulo de Categorias
+- **CAT002-CAT006**: Continuação da implementação do módulo de Categorias
 - **SUB001-SUB008**: Implementação do módulo de Assinaturas 
