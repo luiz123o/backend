@@ -107,19 +107,19 @@
   - [X] Implementar seed de categorias padrão
   - [X] Implementar documentação
 
-- [ ] **CAT002 - Implementar Repositório de Categorias**
-  - [ ] Criar repository base
-  - [ ] Implementar métodos personalizados
-  - [ ] Adicionar testes unitários
-  - [ ] Implementar documentação
+- [X] **CAT002 - Implementar Repositório de Categorias**
+  - [X] Criar repository base
+  - [X] Implementar métodos personalizados
+  - [X] Adicionar testes unitários
+  - [X] Implementar documentação
 
 ### 3.2 Serviços de Categoria
 
-- [ ] **CAT003 - Implementar Serviço de Categorias**
-  - [ ] CRUD de categorias
-  - [ ] Lógica para categorias default/personalizadas
-  - [ ] Regras de negócio
-  - [ ] Implementar documentação
+- [X] **CAT003 - Implementar Serviço de Categorias**
+  - [X] CRUD de categorias
+  - [X] Lógica para categorias default/personalizadas
+  - [X] Regras de negócio
+  - [X] Implementar documentação
 
 ### 3.3 Controllers e APIs
 
