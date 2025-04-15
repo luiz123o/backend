@@ -123,11 +123,11 @@
 
 ### 3.3 Controllers e APIs
 
-- [ ] **CAT004 - Implementar Controllers de Categorias**
-  - [ ] Endpoint de listagem
-  - [ ] Endpoints CRUD
-  - [ ] Validações
-  - [ ] Implementar documentação
+- [X] **CAT004 - Implementar Controllers de Categorias**
+  - [X] Endpoint de listagem
+  - [X] Endpoints CRUD
+  - [X] Validações
+  - [X] Implementar documentação
 
 ### 3.4 Testes
 
